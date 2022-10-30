@@ -4,7 +4,7 @@
 /*
 @brief Simple function that prints a different output depending on the input value.
 @param retfork Integer value returned by fork function.
-@return Void.//
+@return Void.
 */
 void greet(int retFork)
 {
