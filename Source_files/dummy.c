@@ -25,6 +25,8 @@ uint32_t reverseBits(uint32_t n)
 	return reverse;
 }
 
+/************************************************
+*/
 int main(int argc, char** argv)
 {
     if(argc != CORRECT_ARGC_VALUE)
