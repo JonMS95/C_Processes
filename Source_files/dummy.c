@@ -32,7 +32,7 @@ int main(int argc, char** argv)
 {
     if(argc != CORRECT_ARGC_VALUE)
     {
-        printf(ARGUMENT_NUMBER_MESSAGE);
+        perror(ARGUMENT_NUMBER_MESSAGE);
         exit(1);
     }
 
