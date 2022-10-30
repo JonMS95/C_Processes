@@ -1,16 +1,16 @@
-src_main	= Source_files/main.c
+src_fork	= Source_files/fork.c
 
-obj_main	= Object_files/main.o
+obj_fork	= Object_files/fork.o
 
-exe_main	= Executable_files/main
+exe_fork	= Executable_files/fork
 
-all: clean main.o main
+all: clean fork.o fork
 
-main.o: $(src_main)
-	gcc -c $(src_main) -o $(obj_main)
+fork.o: $(src_fork)
+	gcc -c $(src_fork) -o $(obj_fork)
 
-main: $(obj_main)
-	gcc $(obj_main) -o $(exe_main)
+fork: $(obj_fork)
+	gcc $(obj_fork) -o $(exe_fork)
 
 clean:
 	rm -rf Object_files/* Executable_files/*
