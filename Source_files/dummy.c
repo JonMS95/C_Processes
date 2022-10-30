@@ -25,7 +25,8 @@ uint32_t reverseBits(uint32_t n)
 	return reverse;
 }
 
-/************************************************
+/*
+@brief Main function. Program's entry point.
 */
 int main(int argc, char** argv)
 {
