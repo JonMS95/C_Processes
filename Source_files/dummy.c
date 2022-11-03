@@ -37,7 +37,7 @@ int main(int argc, char** argv)
     }
 
     uint32_t n = (uint32_t)atoi(argv[1]);
-    printf("%d in reverse bit order equals %d\r\n", n, reverseBits(n));
+    printf("%d in reverse bit order equals %u\r\n", n, reverseBits(n));
 
     return 0;
 }
