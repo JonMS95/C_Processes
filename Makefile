@@ -6,8 +6,6 @@ exe_fork	= Executable_files/fork
 exe_exec	= Executable_files/exec
 exe_dummy	= Executable_files/dummy
 
-multiline	= echo -e
-
 all: directories clean fork exec dummy msg
 
 directories:
