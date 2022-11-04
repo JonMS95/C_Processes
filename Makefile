@@ -6,6 +6,8 @@ exe_fork	= Executable_files/fork
 exe_exec	= Executable_files/exec
 exe_dummy	= Executable_files/dummy
 
+multiline	= echo -e
+
 all: directories clean fork exec dummy msg
 
 directories:
@@ -21,8 +23,11 @@ dummy: $(src_dummy)
 	gcc $(src_dummy) -o $(exe_dummy)
 
 clean:
-	rm -rf Object_files/* Executable_files/*
+	rm -rf Executable_files/*
 
 msg:
-	@echo "*******************************************************";
+	@echo "**************************************************************************************";
 	@echo "Don't forget to call exec from 'C_Processes' directory!"
+	@echo "Note that the directory it's being called from directly affects the 'execlp' function!"
+	@echo "Use: ./Executable_files/exec"
+	@echo "**************************************************************************************";
