@@ -24,4 +24,5 @@ clean:
 	rm -rf Object_files/* Executable_files/*
 
 msg:
+	@echo "*******************************************************";
 	@echo "Don't forget to call exec from 'C_Processes' directory!"
