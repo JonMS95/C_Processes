@@ -2,33 +2,32 @@ src_fork	= Source_files/fork.c
 src_exec	= Source_files/exec.c
 src_dummy	= Source_files/dummy.c
 
-obj_fork	= Object_files/fork.o
-obj_exec	= Object_files/exec.o
-obj_dummy	= Object_files/dummy.o
-
 exe_fork	= Executable_files/fork
 exe_exec	= Executable_files/exec
 exe_dummy	= Executable_files/dummy
 
-all: clean fork.o fork exec.o exec dummy.o dummy
+multiline	= echo -e
 
-fork.o: $(src_fork)
-	gcc -c $(src_fork) -o $(obj_fork)
+all: directories clean fork exec dummy msg
 
-fork: $(obj_fork)
-	gcc $(obj_fork) -o $(exe_fork)
+directories:
+	./directories.sh
 
-exec.o: $(src_exec)
-	gcc -c $(src_exec) -o $(obj_exec)
+fork: $(src_fork)
+	gcc $(src_fork) -o $(exe_fork)
 
-exec: $(obj_exec)
-	gcc $(obj_exec) -o $(exe_exec)
+exec: $(src_exec)
+	gcc $(src_exec) -o $(exe_exec)
 
-dummy.o: $(src_dummy)
-	gcc -c $(src_dummy) -o $(obj_dummy)
-
-dummy: $(obj_dummy)
-	gcc $(obj_dummy) -o $(exe_dummy)
+dummy: $(src_dummy)
+	gcc $(src_dummy) -o $(exe_dummy)
 
 clean:
-	rm -rf Object_files/* Executable_files/*
+	rm -rf Executable_files/*
+
+msg:
+	@echo "**************************************************************************************";
+	@echo "Don't forget to call exec from 'C_Processes' directory!"
+	@echo "Note that the directory it's being called from directly affects the 'execlp' function!"
+	@echo "Use: ./Executable_files/exec"
+	@echo "**************************************************************************************";
