@@ -6,7 +6,7 @@ exe_fork	= Executable_files/fork
 exe_exec	= Executable_files/exec
 exe_dummy	= Executable_files/dummy
 
-all: directories clean fork exec dummy
+all: directories clean fork exec dummy msg
 
 directories:
 	./directories.sh
@@ -22,3 +22,6 @@ dummy: $(src_dummy)
 
 clean:
 	rm -rf Object_files/* Executable_files/*
+
+msg:
+	@echo "Don't forget to call exec from 'C_Processes' directory!"
