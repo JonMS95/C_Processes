@@ -6,10 +6,10 @@ exe_fork	= Executable_files/fork
 exe_exec	= Executable_files/exec
 exe_dummy	= Executable_files/dummy
 
-all: directories clean fork exec dummy msg
+all: directories clean fork exec dummy msg test
 
 directories:
-	./directories.sh
+	@./Shell_files/directories.sh
 
 fork: $(src_fork)
 	gcc $(src_fork) -o $(exe_fork)
@@ -29,3 +29,7 @@ msg:
 	@echo "Note that the directory it's being called from directly affects the 'execlp' function!"
 	@echo "Use: ./Executable_files/exec"
 	@echo "**************************************************************************************";
+
+test:
+	@echo "Test start..."
+	@./Shell_files/test.sh
